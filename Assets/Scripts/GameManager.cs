@@ -28,7 +28,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             velocidadGlobal -= 0.5f;
-            
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            Time.timeScale = 0.1f;
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            Time.timeScale = 1f;
+
     }
 }

@@ -1041,8 +1041,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -10
+    m_UpperAngle: 10
 --- !u!61 &4539981661885930458
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -2
+  m_GravityScale: -4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1103,7 +1103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4539981661995916206}
-  fuerzaDeSumergir: 15
+  fuerzaDeSumergir: 20
+  fuerzaSubidaExtra: 0.75
 --- !u!1 &4539981661995916204
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class TestPlayer : MonoBehaviour
     public Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
     //public float fuerzaDeFlote;
     public float fuerzaDeSumergir;
+    public float fuerzaSubidaExtra;
 
     private bool sumergiendose = false;
 
@@ -19,6 +20,11 @@ public class TestPlayer : MonoBehaviour
             rb.velocity = Vector2.down * fuerzaDeSumergir;
         }
         #endregion
+
+        if (rb.velocity.y > 0.1f)
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y + fuerzaSubidaExtra);
+        }
 
     }
 
