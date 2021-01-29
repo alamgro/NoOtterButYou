@@ -98,10 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxigenoVida: 100
   velocidadMov: 7
-  frecuenciaDisparo: 0
+  frecuenciaDisparo: 0.5
   piedraPref: {fileID: 7608565383278440188, guid: b762b6e6a1fb8644aaec7a159eb3bb90,
     type: 3}
-  barraOxigeno: {fileID: 0}
 --- !u!50 &288908793868652495
 Rigidbody2D:
   serializedVersion: 4
