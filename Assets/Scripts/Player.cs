@@ -6,11 +6,15 @@ public class Player : MonoBehaviour
 {
     public float oxigenoVida;
     public float velocidadMov;
+    public float frecuenciaDisparo;
+    public GameObject piedraPref;
 
     private Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
+    private float timerDisparo;
 
     private void Start()
     {
+        timerDisparo = frecuenciaDisparo;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -25,9 +29,12 @@ public class Player : MonoBehaviour
         #endregion
 
         #region DISPARO
+        timerDisparo -= Time.deltaTime;
+
         if (Input.GetButtonDown("Piedra1"))
         {
             Debug.Log("Piedra Lanzada!", gameObject);
+            Instantiate(piedraPref, transform.position, Quaternion.identity);
         }
         #endregion
     }

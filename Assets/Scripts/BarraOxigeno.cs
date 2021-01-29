@@ -23,7 +23,7 @@ public class BarraOxigeno : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        oxigenoActual = player.oxigeno;
+        //oxigenoActual = player.oxigeno;
         barraOxigeno.fillAmount = oxigenoActual / oxigenoMax;
     }
 }
