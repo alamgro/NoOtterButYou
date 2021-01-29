@@ -17,12 +17,17 @@ public class Piedra : MonoBehaviour
     void Update()
     {
         rb.velocity = Vector2.right * velocidadMov;
+
+        //Se destruye la piedra si se sale de la pantalla
+        if(transform.position.x > 15f)
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Amenaza"))
         {
+            Destroy(gameObject);
             //Lógica para cuando tocan al enemigo
         }
     }
