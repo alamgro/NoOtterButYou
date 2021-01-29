@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Amenaza
   - Oxigeno
+  - Piedra
   layers:
   - Default
   - TransparentFX

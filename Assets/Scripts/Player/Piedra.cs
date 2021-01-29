@@ -13,11 +13,14 @@ public class Piedra : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = Vector2.right * velocidadMov;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector2.right * velocidadMov;
-
         //Se destruye la piedra si se sale de la pantalla
         if(transform.position.x > 15f)
             Destroy(gameObject);
