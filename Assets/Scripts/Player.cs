@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
     public float oxigenoVida;
     public float velocidadMov;
     public float frecuenciaDisparo;
+
     public GameObject piedraPref;
+    public GameObject barraOxigeno;
 
     private Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
     private float timerDisparo;
@@ -37,6 +39,9 @@ public class Player : MonoBehaviour
             Instantiate(piedraPref, transform.position, Quaternion.identity);
         }
         #endregion
+
+        if (Input.GetKeyDown(KeyCode.Space)) //testeo in  game
+            oxigenoVida -= 10f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,8 +49,8 @@ public class Player : MonoBehaviour
         //Lógica de cuando tocan al player
         if (collision.CompareTag("Amenaza"))
         {
-            //Se le resta de oxígeno al jugador cuando toca una amenaza
-            oxigenoVida -= 10f;
+            //Se le resta de oxígeno al jugador cuando toca una amenaza desde el script de la barraOxigeno
+            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual -= 10f;
         }
     }
 
