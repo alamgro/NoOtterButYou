@@ -51,12 +51,12 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Amenaza"))
         {
             //Se le resta de oxígeno al jugador cuando toca una amenaza
-            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual -= 10f;
+            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual -= 10;
         }
         if (collision.CompareTag("Oxigeno"))
         {
             //Se le resta de oxígeno al jugador cuando toca una amenaza
-            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual += 10f;
+            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual += 10;
         } 
     }
 
