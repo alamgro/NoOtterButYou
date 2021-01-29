@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         {
             //Se le resta de oxígeno al jugador cuando toca una amenaza
             barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual += 10f;
-        }
+        } 
     }
 
 }
