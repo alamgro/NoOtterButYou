@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
-    public float fuerzaDeSumergir;
-    public float fuerzaSubidaExtra;
+    public float velocidadMov;
+
+    private Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
-        #region MOVIMIENTO VERSIÓN 2
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            rb.velocity = Vector2.down * fuerzaDeSumergir;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.velocity = Vector2.zero;
-            transform.position = new Vector2(transform.position.x, 0f);
-        }
-        #endregion
+        #region MOVIMIENTO LIBRE
+        float ejeX = Input.GetAxisRaw("HorizontalWASD");
+        float ejeY = Input.GetAxisRaw("VerticalWASD");
+        Vector2 vectorMov = new Vector2(ejeX, ejeY).normalized;
 
-        if (rb.velocity.y > 0.1f)
-        {
-            rb.velocity = new Vector2(0f, rb.velocity.y + fuerzaSubidaExtra);
-        }
+        rb.velocity = vectorMov * velocidadMov;
+        #endregion
 
     }
 

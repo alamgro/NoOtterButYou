@@ -15,24 +15,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(velocidadGlobal);
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            velocidadGlobal += 0.5f;
-            if (velocidadGlobal < 0f)
-            {
-                velocidadGlobal = 0f;
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            velocidadGlobal -= 0.5f;
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
-
 
     }
 }
