@@ -17,7 +17,7 @@ public class Obstaculo : MonoBehaviour
 	void FixedUpdate()
 	{
 		//Si no hay un evento activo el objeto sigue en movimiento, sino, su velocidad es 0 en X y Y
-		rb.velocity = Vector2.left * GameManager.velocidadGlobal; //Le da la velocidad de movimiento al obstáculo
+		rb.velocity = Vector2.left * velocidad; //Le da la velocidad de movimiento al obstáculo
 	}
 
     private void Update()
