@@ -1,0 +1,62 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player2 : MonoBehaviour
+{
+    public float oxigenoVida;
+    public float velocidadMov;
+    public float frecuenciaDisparo;
+
+    public GameObject piedraPref;
+    public GameObject barraOxigeno;
+
+
+    private Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
+    private float timerDisparo;
+
+    private void Start()
+    {
+        timerDisparo = frecuenciaDisparo;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        #region MOVIMIENTO LIBRE PLAYER
+        float ejeX = Input.GetAxisRaw("HorizontalFLECHAS");
+        float ejeY = Input.GetAxisRaw("VerticalFLECHAS");
+        Vector2 vectorMov = new Vector2(ejeX, ejeY).normalized; //Crea un vector con los inputs de movimiento recibidos
+
+        rb.velocity = vectorMov * velocidadMov; //Da la velocidad final al rigidbody
+        #endregion
+
+        #region DISPARO
+        timerDisparo += Time.deltaTime;
+
+        if (Input.GetButtonDown("Piedra2"))
+        {
+            if (timerDisparo >= frecuenciaDisparo)
+            {
+                Instantiate(piedraPref, transform.position, Quaternion.identity);
+                timerDisparo = 0f; //Reiniciar el contador
+            }
+        }
+        #endregion
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Lógica de cuando tocan al player
+        if (collision.CompareTag("Amenaza"))
+        {
+            //Se le resta de oxígeno al jugador cuando toca una amenaza
+            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual -= 10f;
+        }
+        if (collision.CompareTag("Oxigeno"))
+        {
+            //Se le resta de oxígeno al jugador cuando toca una amenaza
+            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual += 10f;
+        }
+    }
+}

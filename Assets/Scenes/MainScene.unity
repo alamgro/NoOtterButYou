@@ -846,6 +846,7 @@ Transform:
   - {fileID: 1103034999}
   - {fileID: 178842138}
   - {fileID: 1245708565}
+  - {fileID: 1231335515309403662}
   - {fileID: 5974075576422055932}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -855,6 +856,81 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 954275661416492246, guid: 6775afe6b17c5944d849db78df487df2,
     type: 3}
   m_PrefabInstance: {fileID: 7797581956473603703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &965919911961885373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2111802434}
+    m_Modifications:
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427749413911790062, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_Name
+      value: PLAYER_2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ce83e232d4516442bbc742e74def0fd, type: 3}
+--- !u!4 &1231335515309403662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2049478860598154419, guid: 7ce83e232d4516442bbc742e74def0fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 965919911961885373}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5974075576422055932 stripped
 Transform:
@@ -877,17 +953,17 @@ PrefabInstance:
     - target: {fileID: 4530266548604238219, guid: 6775afe6b17c5944d849db78df487df2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4530266548604238219, guid: 6775afe6b17c5944d849db78df487df2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.3
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4530266548604238219, guid: 6775afe6b17c5944d849db78df487df2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4530266548604238219, guid: 6775afe6b17c5944d849db78df487df2,
         type: 3}
