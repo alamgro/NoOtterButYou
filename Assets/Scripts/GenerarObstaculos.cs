@@ -22,15 +22,6 @@ public class GenerarObstaculos : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            frecuencia -= 0.1f;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            frecuencia += 0.1f;
-        }
-
         if (timer <= 0f)
         {
             Vector2 posicion = new Vector2(10f, Random.Range(coordMin, coordMax));
