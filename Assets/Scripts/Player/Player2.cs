@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
-    public float oxigenoVida;
     public float velocidadMov;
     public float frecuenciaDisparo;
 
