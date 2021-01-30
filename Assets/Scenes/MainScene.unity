@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -807,12 +807,12 @@ PrefabInstance:
     - target: {fileID: 7210688938494227837, guid: b4925c40d7db9164a9ab109e56a5d7c5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 298.69
+      value: 330
       objectReference: {fileID: 0}
     - target: {fileID: 7210688938494227837, guid: b4925c40d7db9164a9ab109e56a5d7c5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 168.4
+      value: 189.29
       objectReference: {fileID: 0}
     - target: {fileID: 7210688938494227837, guid: b4925c40d7db9164a9ab109e56a5d7c5,
         type: 3}
@@ -889,12 +889,11 @@ MonoBehaviour:
   coordMin: -3.5
   coordMax: 3.5
   obstaculos:
-  - {fileID: 3706151757443060465, guid: b466ede6216d34340ba3a289af6101a9, type: 3}
   - {fileID: 5183750586103558567, guid: 3634432001973274bb2fc33f48b47fc4, type: 3}
   - {fileID: 18177371808866993, guid: cb14d3ab95560084a9d1b6c720944f93, type: 3}
   - {fileID: 18177371808866993, guid: f3bf5625cafd88f4f933c3c98ecf5d97, type: 3}
   - {fileID: 3706151757443060465, guid: 922bcfb11bc7a154b9abedc50646bd42, type: 3}
-  frecuencia: 0.75
+  frecuencia: 0.9
 --- !u!1 &1208018546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,12 +1179,12 @@ PrefabInstance:
     - target: {fileID: 7210688938494227837, guid: b4925c40d7db9164a9ab109e56a5d7c5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -298.69
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 7210688938494227837, guid: b4925c40d7db9164a9ab109e56a5d7c5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 168.4
+      value: 189.29
       objectReference: {fileID: 0}
     - target: {fileID: 7210688938494227837, guid: b4925c40d7db9164a9ab109e56a5d7c5,
         type: 3}
@@ -1413,7 +1412,7 @@ PrefabInstance:
     - target: {fileID: 7572750989304399780, guid: 677d98e2da0f0d542beecf5c3e53689e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.69
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 7572750989304399780, guid: 677d98e2da0f0d542beecf5c3e53689e,
         type: 3}

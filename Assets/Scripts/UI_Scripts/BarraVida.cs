@@ -17,8 +17,13 @@ public class BarraVida : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) //testeo in-game
+        if (Input.GetKeyDown(KeyCode.Alpha9)) //testeo in-game
             vidaActual -= 1f; 
+
+        if(vidaActual < 0)
+        {
+            print("perdiste gg");
+        }
 
         barraVida.fillAmount = vidaActual / vidaMax;
     }
