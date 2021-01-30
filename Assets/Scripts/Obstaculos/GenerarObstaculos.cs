@@ -14,7 +14,7 @@ public class GenerarObstaculos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = frecuencia;
+        timer = 3f; //El primer obstáculo se genera a partir de este segundo
     }
 
     // Update is called once per frame

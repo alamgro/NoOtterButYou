@@ -21,15 +21,16 @@ public class BarraOxigeno : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Space)) //testeo in  game
+        /*if (Input.GetKeyDown(KeyCode.Alpha8)) //testeo in  game
             oxigenoActual -= 10f;*/
 
         barraOxigeno.fillAmount = oxigenoActual / oxigenoMax;
 
         //Si el oxígeno llega a 0, pierdes una vida y se te reinicia el oxígeno a 100%
-        if(oxigenoActual <= 0f)
+        if (oxigenoActual <= 0f)
         {
             barraVidaComp.vidaActual -= 1f; //Resta una vida
+            oxigenoActual = 0.001f; //Ponemos el oxígeno en una cantidad muy pequeña pero diferente de 0 para que no vuelva a entrar a este if
             //oxigenoActual = oxigenoMax; //Reset del oxígeno al máximo (POR AHORA NO DEBE HACERLO ÉL MISMO
         }
     }

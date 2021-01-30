@@ -17,8 +17,8 @@ public class BarraVida : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha9)) //testeo in-game
-            vidaActual -= 1f; 
+        /*if (Input.GetKeyDown(KeyCode.Alpha9)) //testeo in-game
+            vidaActual -= 1f; */
 
         if(vidaActual < 0)
         {

@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    #region VARIABLES PÚBLICAS
     public float velocidadMov;
     public float frecuenciaDisparo;
-    [HideInInspector]
-    public bool incapacitado;
 
     public GameObject piedraPref;
     public GameObject barraOxigenoObj;
+    public Transform otroPlayer;
+    #endregion
 
+    #region VARIABLES PRIVADAS
     private Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
-    private float timerDisparo;
     private BarraOxigeno barraOxigenoComp;
+    private SpriteRenderer spritePlayer;
+
+    private float timerDisparo;
+    private float timerRecuperacion;
+    private bool incapacitado;
+    private bool inmunidad;
+    #endregion
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         barraOxigenoComp = barraOxigenoObj.GetComponent<BarraOxigeno>();
-        incapacitado = false;
+        spritePlayer = GetComponent<SpriteRenderer>();
+        incapacitado = inmunidad = false; //Por defecto estos estados inician desactivados
         timerDisparo = frecuenciaDisparo;
     }
 
@@ -34,7 +43,25 @@ public class Player : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector2.zero; //Hace que se detenga al instante cuando está incapacitado
+            float distanciaPlayers = Vector3.Distance(transform.position, otroPlayer.position); //Calcula la distancia entre el los jugadores
+
+            //Revisa que la distancia entre los players sea la suficiente para recuperarlo de la incapacidad
+            if(distanciaPlayers <= 1.1f)
+            {
+                timerRecuperacion += Time.deltaTime;
+                //Cuando está en rango de revivir por dos segundos, lo revive
+                if(timerRecuperacion >= 2f)
+                {
+                    print("Recuperado");
+                    incapacitado = false; //Quitamos la incapacidad
+                    barraOxigenoComp.oxigenoActual = barraOxigenoComp.oxigenoMax; //Rellenarle el oxígeno al 100%
+                }
+            }
+            else
+            {
+                timerRecuperacion = 0f;
+            }
         }
     }
 
@@ -74,18 +101,43 @@ public class Player : MonoBehaviour
         #endregion
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator InvocarParpadeo(float _tiempo)
     {
-        //Lógica de cuando tocan al player
-        if (collision.CompareTag("Amenaza"))
+        InvokeRepeating("ParpadeoInmune", 0f, 0.05f);
+        yield return new WaitForSeconds(_tiempo);
+        spritePlayer.enabled = true; //Forzar a que termine siendo visible en el último frame
+        CancelInvoke("ParpadeoInmune");
+        inmunidad = false; //Le quita la inmunidad después de un tiempo
+    }
+
+    void ParpadeoInmune()
+    {
+        print(spritePlayer.enabled);
+        spritePlayer.enabled = !spritePlayer.enabled;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //Solo puede obtener o perder oxígeno si no está incapacitado
+        if (!incapacitado)
         {
-            //Se le resta de oxígeno al jugador cuando toca una amenaza
-            barraOxigenoComp.oxigenoActual -= 10;
-        }
-        if (collision.CompareTag("Oxigeno"))
-        {
-            //Se le resta de oxígeno al jugador cuando toca una amenaza
-            barraOxigenoComp.oxigenoActual += 10;
+            //Lógica de cuando tocan al player
+            if (collision.CompareTag("Amenaza"))
+            {
+                if (!inmunidad)
+                {
+                    //Se le resta de oxígeno al jugador cuando toca una amenaza
+                    barraOxigenoComp.oxigenoActual -= 10;
+                    inmunidad = true; //Dar inmunidad
+                    StartCoroutine(InvocarParpadeo(1f));
+                }
+            }
+
+            if (collision.CompareTag("Oxigeno"))
+            {
+                //Se le resta de oxígeno al jugador cuando toca una amenaza
+                barraOxigenoComp.oxigenoActual += 10;
+            }
         }
     }
 
