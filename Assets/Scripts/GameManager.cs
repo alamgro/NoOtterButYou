@@ -5,18 +5,35 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static float velocidadGlobal;
+    bool pause;
 
     // Start is called before the first frame update
     void Start()
     {
-        velocidadGlobal = 20f;   
+        velocidadGlobal = 20f;
+        pause = false;
+    
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+        {
+            if (!pause)
+            {
+                Escenas.Pause();
+            }
+            else
+                Escenas.PauseDestry();
+
+            pause = !pause;
+        }
+
+       // print("Pause esta en :" + pause);
+
+
+
 
     }
 }

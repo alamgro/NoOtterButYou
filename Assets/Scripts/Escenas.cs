@@ -1,18 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Escenas : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   
+    public void MenuScene()
     {
-        
+        SceneManager.LoadScene("Menu");
+    }
+    public void CreditsScene()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void MappingScene()
+    {
+        SceneManager.LoadScene("Mapping");
+    }
+    public void Juego()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+    public void MappingAdditive()
+    {
+        SceneManager.LoadScene("MappingAdditive", LoadSceneMode.Additive);
+    }
+    public static void Pause()
+    {
+        SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
+       // SceneManager.UnloadSceneAsync("MappingAdditive");
+    }
+    public static void PauseDestry()
+    {
+        SceneManager.UnloadSceneAsync("Pause");
+    }
+    public void Salir()
+    {
+        Application.Quit();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
