@@ -6,21 +6,48 @@ public class Player : MonoBehaviour
 {
     public float velocidadMov;
     public float frecuenciaDisparo;
+    [HideInInspector]
+    public bool incapacitado;
 
     public GameObject piedraPref;
-    public GameObject barraOxigeno;
-
+    public GameObject barraOxigenoObj;
 
     private Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
     private float timerDisparo;
+    private BarraOxigeno barraOxigenoComp;
 
     private void Start()
     {
-        timerDisparo = frecuenciaDisparo;
         rb = GetComponent<Rigidbody2D>();
+        barraOxigenoComp = barraOxigenoObj.GetComponent<BarraOxigeno>();
+        incapacitado = false;
+        timerDisparo = frecuenciaDisparo;
     }
 
     void Update()
+    {
+        if (!incapacitado)
+        {
+            Movimiento();
+            Disparo();
+            ChecarOxigeno();
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    //Si se le acaba el oxígeno, queda incapacitado el Player
+    void ChecarOxigeno()
+    {
+        if (barraOxigenoComp.oxigenoActual <= 0)
+        {
+            incapacitado = true;
+        }
+    }
+
+    void Movimiento()
     {
         #region MOVIMIENTO LIBRE PLAYER
         float ejeX = Input.GetAxisRaw("HorizontalWASD");
@@ -29,7 +56,10 @@ public class Player : MonoBehaviour
 
         rb.velocity = vectorMov * velocidadMov; //Da la velocidad final al rigidbody
         #endregion
+    }
 
+    void Disparo()
+    {
         #region DISPARO
         timerDisparo += Time.deltaTime;
 
@@ -50,13 +80,13 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Amenaza"))
         {
             //Se le resta de oxígeno al jugador cuando toca una amenaza
-            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual -= 10;
+            barraOxigenoComp.oxigenoActual -= 10;
         }
         if (collision.CompareTag("Oxigeno"))
         {
             //Se le resta de oxígeno al jugador cuando toca una amenaza
-            barraOxigeno.GetComponent<BarraOxigeno>().oxigenoActual += 10;
-        } 
+            barraOxigenoComp.oxigenoActual += 10;
+        }
     }
 
 }

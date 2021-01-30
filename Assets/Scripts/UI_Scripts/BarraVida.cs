@@ -22,7 +22,7 @@ public class BarraVida : MonoBehaviour
 
         if(vidaActual < 0)
         {
-            print("perdiste gg");
+            //Lógica para cuando pierden todas las vidas
         }
 
         barraVida.fillAmount = vidaActual / vidaMax;

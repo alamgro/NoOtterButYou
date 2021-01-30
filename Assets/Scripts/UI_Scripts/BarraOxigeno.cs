@@ -30,7 +30,8 @@ public class BarraOxigeno : MonoBehaviour
         if(oxigenoActual <= 0f)
         {
             barraVidaComp.vidaActual -= 1f; //Resta una vida
-            oxigenoActual = oxigenoMax; //Reset del oxígeno al máximo
+            //oxigenoActual = oxigenoMax; //Reset del oxígeno al máximo (POR AHORA NO DEBE HACERLO ÉL MISMO
         }
     }
+
 }

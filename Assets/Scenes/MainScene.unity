@@ -1334,6 +1334,11 @@ PrefabInstance:
       propertyPath: barraOxigeno
       value: 
       objectReference: {fileID: 958341714}
+    - target: {fileID: 5499501542188919609, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: barraOxigenoObj
+      value: 
+      objectReference: {fileID: 958341714}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ce83e232d4516442bbc742e74def0fd, type: 3}
 --- !u!4 &1231335515309403662 stripped
@@ -1549,6 +1554,11 @@ PrefabInstance:
     - target: {fileID: 7797581956473603659, guid: 6775afe6b17c5944d849db78df487df2,
         type: 3}
       propertyPath: barraOxigeno
+      value: 
+      objectReference: {fileID: 231528106}
+    - target: {fileID: 7797581956473603659, guid: 6775afe6b17c5944d849db78df487df2,
+        type: 3}
+      propertyPath: barraOxigenoObj
       value: 
       objectReference: {fileID: 231528106}
     m_RemovedComponents: []
