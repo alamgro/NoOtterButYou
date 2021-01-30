@@ -1331,6 +1331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499501542188919609, guid: 7ce83e232d4516442bbc742e74def0fd,
         type: 3}
+      propertyPath: otroPlayer
+      value: 
+      objectReference: {fileID: 5974075576422055932}
+    - target: {fileID: 5499501542188919609, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
       propertyPath: barraOxigeno
       value: 
       objectReference: {fileID: 958341714}
@@ -1551,6 +1556,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7797581956473603659, guid: 6775afe6b17c5944d849db78df487df2,
+        type: 3}
+      propertyPath: otroPlayer
+      value: 
+      objectReference: {fileID: 1231335515309403662}
     - target: {fileID: 7797581956473603659, guid: 6775afe6b17c5944d849db78df487df2,
         type: 3}
       propertyPath: barraOxigeno

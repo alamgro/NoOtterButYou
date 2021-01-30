@@ -10,7 +10,7 @@ public class BarraOxigeno : MonoBehaviour
     public float oxigenoActual; //El oxigendo o vida que tiene en ese momento y lo lleva el Player
     public GameObject barraVidaObj;
 
-    Image barraOxigeno;
+    public Image barraOxigeno;
     private BarraVida barraVidaComp;
 
     void Start()

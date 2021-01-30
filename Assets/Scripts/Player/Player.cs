@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
         if (!incapacitado)
         {
             Movimiento();
@@ -50,6 +51,9 @@ public class Player : MonoBehaviour
             if(distanciaPlayers <= 1.1f)
             {
                 timerRecuperacion += Time.deltaTime;
+
+                barraOxigenoComp.oxigenoActual = ((barraOxigenoComp.oxigenoMax / 2.0f) * timerRecuperacion); //Rellenarle el oxígeno al 100%
+
                 //Cuando está en rango de revivir por dos segundos, lo revive
                 if(timerRecuperacion >= 2f)
                 {
