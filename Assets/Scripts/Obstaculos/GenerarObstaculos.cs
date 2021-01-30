@@ -25,37 +25,42 @@ public class GenerarObstaculos : MonoBehaviour
         if (timer <= 0f)
         {
             Vector2 posicion = new Vector2(10f, Random.Range(coordMin, coordMax));
-            int posibilidad = Random.Range(1, 100);
+            int probabilidad = Random.Range(1, 100);
 
-            if (posibilidad <= 15)
+            if(probabilidad <= 45) //MEDIANO 45%
             {
-                //CHICO
                 Instantiate(obstaculos[0], posicion, Quaternion.identity);
             }
-            else if(posibilidad <= 65)
+            else if (probabilidad <= 50) //GRANDE O EXTRAÑO 10%
             {
-                //MEDIANO
-                Instantiate(obstaculos[1], posicion, Quaternion.identity);
-            }
-            else if (posibilidad <= 75)
-            {
-                //GRANDE O EXTRAÑO
-                posibilidad = Random.Range(1, 50);
-                if(posibilidad <= 50)
+                probabilidad = Random.Range(1, 50); //Calcular la probabilidad ahora para decidir cuál de los dos sale
+                if(probabilidad <= 50)
                 {
-                    //GRANDE
-                    Instantiate(obstaculos[2], posicion, Quaternion.identity);
+                    //GRANDE 50%
+                    Instantiate(obstaculos[1], posicion, Quaternion.identity);
                 }
                 else
                 {
-                    //CARDUMEN
+                    //CARDUMEN 50%
+                    Instantiate(obstaculos[2], posicion, Quaternion.identity);
                 }
             }
-            else if (posibilidad <= 100)
+            else if (probabilidad <= 66) //ANCLA 16%
             {
-                //ANCLA
                 posicion = new Vector2(Random.Range(-8f, 0f), 8f); //La lógica de generación del Ancla es diferente, aparece arriba
-                Instantiate(obstaculos[4], posicion, Quaternion.identity);
+                Instantiate(obstaculos[3], posicion, Quaternion.identity);
+            }
+            else if (probabilidad <= 78) //#1 12%
+            {
+
+            }
+            else if (probabilidad <= 90) //#2 12%
+            {
+
+            }
+            else if (probabilidad <= 100) //#3 10%
+            {
+
             }
 
             //Instantiate(obstaculos[randObs], posicion, Quaternion.identity);
