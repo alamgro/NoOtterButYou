@@ -24,7 +24,6 @@ public class CuentaDistancia : MonoBehaviour
     void Update()
     {
         tiempo += Time.deltaTime;
-        print("El tiempo" + tiempo);
         barraOxigeno.fillAmount = tiempo / distanciaTotal;
 
     }
