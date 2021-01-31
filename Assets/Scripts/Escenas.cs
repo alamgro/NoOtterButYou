@@ -22,9 +22,10 @@ public class Escenas : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
-    public void MappingAdditive()
+    public  void MappingAdditive()
     {
         SceneManager.LoadScene("MappingAdditive", LoadSceneMode.Additive);
+        GameManager.mappingAbierto = true;
     }
     public void MappingAdditiveDestroy()
     {
@@ -44,7 +45,11 @@ public class Escenas : MonoBehaviour
     }
     public static void GameOver()
     {
+        Time.timeScale = 0;
+
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        GameManager.gameOver = false;
+
     }
     public void GameOverDetry()
     {

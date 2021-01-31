@@ -16,9 +16,13 @@ public class EscenasAdditive : MonoBehaviour
 
 
     }
-    public  void GameOver()
+    /*public  void GameOver()
     {
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        GameManager.gameOver = false;
+    }*/
+    public static void MappingAdditiveDestroy()
+    {
+        SceneManager.UnloadSceneAsync("MappingAdditive");
     }
-   
 }
