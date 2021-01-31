@@ -16,7 +16,6 @@ public class Obstaculo : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		//Si no hay un evento activo el objeto sigue en movimiento, sino, su velocidad es 0 en X y Y
 		rb.velocity = Vector2.left * velocidad; //Le da la velocidad de movimiento al obstáculo
 	}
 
@@ -24,7 +23,7 @@ public class Obstaculo : MonoBehaviour
     {
 		ChecarVida();
 
-		if (transform.position.x <= -15f)
+		if (transform.position.x <= -20f)
         {
 			Destroy(gameObject);
         }

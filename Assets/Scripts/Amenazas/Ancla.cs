@@ -24,7 +24,7 @@ public class Ancla : MonoBehaviour
 
 	private void Update()
 	{
-		if(transform.position.y <= 5f && debeDetenerse)
+		if(transform.position.y <= 6f && debeDetenerse)
         {
 			debeDetenerse = false;
 			StartCoroutine(EsperarCaida(1.5f));

@@ -77,7 +77,6 @@ public class Player2 : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        print(incapacitado);
     }
 
     //Si se le acaba el oxígeno, queda incapacitado el Player

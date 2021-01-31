@@ -26,7 +26,7 @@ public class StalkerProyectil : MonoBehaviour
         ChecarVida();
 
         //Se destruye la piedra si se sale de la pantalla
-        if (transform.position.x <= -15f)
+        if (transform.position.x <= -20f)
             Destroy(gameObject);
     }
 

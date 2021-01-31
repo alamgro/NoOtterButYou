@@ -43,7 +43,7 @@ public class Stalker : MonoBehaviour
     {
 		ChecarVida();
 
-        if (transform.position.x <= -15f)
+        if (transform.position.x <= -20f)
         {
             Destroy(gameObject);
         }

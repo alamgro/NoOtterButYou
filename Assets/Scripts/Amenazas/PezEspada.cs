@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 /*
- * 
+ * El pez espada espera un momento antes de correr rápidamente hasta el otro lado de la pantalla
  */
 public class PezEspada : MonoBehaviour
 {
@@ -32,13 +32,13 @@ public class PezEspada : MonoBehaviour
 	{
 		ChecarVida();
 
-		if (transform.position.x <= 9f && debeDetenerse)
+		if (transform.position.x <= 12f && debeDetenerse)
 		{
 			debeDetenerse = false;
 			StartCoroutine(EsperarSprint(1.5f));
 		}
 
-		if (transform.position.x <= -15f)
+		if (transform.position.x <= -20f)
 		{
 			Destroy(gameObject);
 		}
