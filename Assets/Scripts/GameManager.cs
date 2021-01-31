@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         velocidadGlobal = 20f;
         jugadoresVivos = 2;
         jugadoresIncapacitados = 0;

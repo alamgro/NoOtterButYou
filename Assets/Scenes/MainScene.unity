@@ -1092,7 +1092,7 @@ MonoBehaviour:
   - {fileID: 5183750586103558567, guid: c18ad3f12d24bad439465b2b972ae66d, type: 3}
   - {fileID: 5183750586103558567, guid: f94ea40fe155cbd438ab7b89800b533a, type: 3}
   - {fileID: 5183750586103558567, guid: e6b4c0cf952bdf745977f305b5eb73f6, type: 3}
-  frecuencia: 0.7
+  frecuencia: 1.2
 --- !u!1 &1208018546
 GameObject:
   m_ObjectHideFlags: 0

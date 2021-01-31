@@ -106,7 +106,7 @@ public class Player2 : MonoBehaviour
         #region DISPARO
         timerDisparo += Time.deltaTime;
 
-        if (Input.GetButtonDown("Piedra2"))
+        if (Input.GetButton("Piedra2"))
         {
             if (timerDisparo >= frecuenciaDisparo)
             {
