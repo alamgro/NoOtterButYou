@@ -889,6 +889,8 @@ MonoBehaviour:
   - {fileID: 3706151757443060465, guid: 922bcfb11bc7a154b9abedc50646bd42, type: 3}
   - {fileID: 3706151757443060465, guid: b466ede6216d34340ba3a289af6101a9, type: 3}
   - {fileID: 5183750586103558567, guid: c18ad3f12d24bad439465b2b972ae66d, type: 3}
+  - {fileID: 5183750586103558567, guid: f94ea40fe155cbd438ab7b89800b533a, type: 3}
+  - {fileID: 5183750586103558567, guid: e6b4c0cf952bdf745977f305b5eb73f6, type: 3}
   frecuencia: 0.7
 --- !u!1 &1208018546
 GameObject:
@@ -1340,6 +1342,11 @@ PrefabInstance:
       propertyPath: barraOxigenoObj
       value: 
       objectReference: {fileID: 958341714}
+    - target: {fileID: 6437375548983228910, guid: 7ce83e232d4516442bbc742e74def0fd,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ce83e232d4516442bbc742e74def0fd, type: 3}
 --- !u!4 &1231335515309403662 stripped
@@ -1557,11 +1564,6 @@ PrefabInstance:
       propertyPath: otroPlayer
       value: 
       objectReference: {fileID: 1231335515309403662}
-    - target: {fileID: 7797581956473603659, guid: 6775afe6b17c5944d849db78df487df2,
-        type: 3}
-      propertyPath: barraOxigeno
-      value: 
-      objectReference: {fileID: 231528106}
     - target: {fileID: 7797581956473603659, guid: 6775afe6b17c5944d849db78df487df2,
         type: 3}
       propertyPath: barraVidaObj
