@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class OjoMiniBoss : MonoBehaviour
 {
-    //[HideInInspector]
+    [HideInInspector]
     public bool abrirOjo;
     public float timerOjo;
+
     public int vida;
 
     private SpriteRenderer spriteRenderer;
@@ -24,9 +25,8 @@ public class OjoMiniBoss : MonoBehaviour
 
         if (abrirOjo)
         {
-            spriteRenderer.color = new Color(150f, 35f, 200f); //Cambiar color [aquí debe ir la lógica de abrir el ojo]
+            spriteRenderer.color = new Color(1f, 1f, 1f); //Cambiar color [aquí debe ir la lógica de ABRIR el ojo]
 
-            //abrirOjo = false;
             timerOjo -= Time.deltaTime;
             if (timerOjo <= 0f)
             {
@@ -41,18 +41,19 @@ public class OjoMiniBoss : MonoBehaviour
     {
         if (vida <= 0)
         {
-            Destroy(gameObject);
+            // [aquí debe ir la lógica de ojo DERROTADO / MUERTO]
+            timerOjo = 0f; //Se queda en 0 para que cierre el ojo inmediatamente
+            spriteRenderer.color = new Color(0.6f, 0.14f, 0.8f);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (abrirOjo)
         {
-            if (collision.gameObject.CompareTag("Piedra"))
+            if (collision.CompareTag("Piedra"))
             {
                 vida--;
-                print(vida);
             }
         }
     }

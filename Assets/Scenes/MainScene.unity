@@ -1584,26 +1584,31 @@ PrefabInstance:
     - target: {fileID: 735802631156046793, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.78431374
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 735802631156046793, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.13725491
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 735802631156046793, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.58587795
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1442012713729147672, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 1754377459040000055, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
-      propertyPath: m_Constraints
-      value: 4
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1442012713729147672, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 1754377459040000055, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
-      propertyPath: m_GravityScale
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754377459040000055, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+        type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2966826016434250377, guid: 17d4b4bae863e1e459d3f9df614b32ff,
@@ -1611,49 +1616,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 4135280702290457568, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 5735174190143122004, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.78431374
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4135280702290457568, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 5735174190143122004, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.13725491
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4135280702290457568, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 5735174190143122004, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.58587795
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883124968804387377, guid: 17d4b4bae863e1e459d3f9df614b32ff,
-        type: 3}
-      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5883124968804387377, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 7211439199166160458, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
-      propertyPath: m_FlipY
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6374871408765341937, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 7211439199166160458, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
-      propertyPath: vida
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6374871408765341937, guid: 17d4b4bae863e1e459d3f9df614b32ff,
-        type: 3}
-      propertyPath: abrirOjo
+      propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6374871408765341937, guid: 17d4b4bae863e1e459d3f9df614b32ff,
+    - target: {fileID: 7211439199166160458, guid: 17d4b4bae863e1e459d3f9df614b32ff,
         type: 3}
-      propertyPath: timerOjo
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7478986292200397842, guid: 17d4b4bae863e1e459d3f9df614b32ff,
-        type: 3}
-      propertyPath: m_IsTrigger
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8098169287968535028, guid: 17d4b4bae863e1e459d3f9df614b32ff,

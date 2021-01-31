@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
                 if (!inmunidad)
                 {
                     //Se le resta de oxígeno al jugador cuando toca una amenaza
-                    barraOxigenoComp.oxigenoActual -= 10f;
+                    barraOxigenoComp.oxigenoActual -= 25f;
                     inmunidad = true; //Dar inmunidad
                     StartCoroutine(InvocarParpadeo(1f));
                 }
