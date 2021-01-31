@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static int jugadoresIncapacitados; //Es la cantidad de jugadores que están incapacitados, si hay dos, se acaba el juego
     public static int jugadoresVivos; //Es la cantidad de jugadores que aún están vivos, si no queda ninguno, se acaba el juego
 
-    bool pause;
+    public static bool pause;
     bool escenaFin;
 
     // Start is called before the first frame update
@@ -32,7 +32,9 @@ public class GameManager : MonoBehaviour
                 Escenas.Pause();
             }
             else
-                Escenas.PauseDestry();
+            {
+                Escenas.PauseDestroy();
+            }
 
             pause = !pause;
         }
