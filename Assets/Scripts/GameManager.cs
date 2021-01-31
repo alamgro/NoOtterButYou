@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public static bool pause;
     bool escenaFin;
 
+    public static bool mappingAbierto;
+    public static bool gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,21 +24,27 @@ public class GameManager : MonoBehaviour
         jugadoresIncapacitados = 0;
         pause = false;
         escenaFin = false;
+
+        gameOver = true;
+        mappingAbierto = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && gameOver)
         {
             if (!pause)
             {
                 Escenas.Pause();
+                mappingAbierto = false;
             }
             else
             {
                 Escenas.PauseDestroy();
             }
+            if (mappingAbierto)
+                EscenasAdditive.MappingAdditiveDestroy();
 
             pause = !pause;
         }
