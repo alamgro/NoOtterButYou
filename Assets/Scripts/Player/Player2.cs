@@ -145,7 +145,7 @@ public class Player2 : MonoBehaviour
                 {
                     Instantiate(burbujasParticulas, transform.position, Quaternion.identity);
                     //Se le resta de oxígeno al jugador cuando toca una amenaza
-                    barraOxigenoComp.oxigenoActual -= 20f;
+                    barraOxigenoComp.oxigenoActual -= 25f;
                     inmunidad = true; //Dar inmunidad
                     StartCoroutine(InvocarParpadeo(1f));
                 }

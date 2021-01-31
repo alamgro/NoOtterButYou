@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMov: 7
-  frecuenciaDisparo: 0.1
+  frecuenciaDisparo: 0.25
   barraVidaObj: {fileID: 0}
+  burbujasParticulas: {fileID: 841523016958316398, guid: 1b99df86fa783024394b3473feb823ab,
+    type: 3}
   piedraPref: {fileID: 7608565383278440188, guid: b762b6e6a1fb8644aaec7a159eb3bb90,
     type: 3}
   barraOxigenoObj: {fileID: 0}
