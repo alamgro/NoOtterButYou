@@ -26,14 +26,21 @@ public class Escenas : MonoBehaviour
     {
         SceneManager.LoadScene("MappingAdditive", LoadSceneMode.Additive);
     }
+    public void MappingAdditiveDestroy()
+    {
+        SceneManager.UnloadSceneAsync("MappingAdditive");
+    }
     public static void Pause()
     {
         SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
-       // SceneManager.UnloadSceneAsync("MappingAdditive");
+        Time.timeScale = 0;
     }
-    public static void PauseDestry()
+    public static void PauseDestroy()
     {
         SceneManager.UnloadSceneAsync("Pause");
+        Time.timeScale = 1;
+
+
     }
     public static void GameOver()
     {

@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 648720241}
   - component: {fileID: 648720240}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Controles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 1148283909}
   - component: {fileID: 1148283908}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Jugar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 1400274363}
   - component: {fileID: 1400274362}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Creditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 1423844361}
   - component: {fileID: 1423844360}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Salir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 2028578419}
   - component: {fileID: 2028578418}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

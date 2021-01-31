@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 146097630}
   - component: {fileID: 146097629}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Alexander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 213411034}
   - component: {fileID: 213411033}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299.8, y: 185.5}
+  m_AnchoredPosition: {x: -303, y: 171}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213411033
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 328266696}
   - component: {fileID: 328266695}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Luis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 360775031}
   - component: {fileID: 360775030}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Alam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 477191233}
   - component: {fileID: 477191232}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Backgound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 717234779}
   - component: {fileID: 717234778}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: Pilar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1519,7 +1519,7 @@ GameObject:
   - component: {fileID: 775055140}
   - component: {fileID: 775055139}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Irma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1796,7 +1796,7 @@ GameObject:
   - component: {fileID: 927393840}
   - component: {fileID: 927393839}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Daniela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2274,7 +2274,7 @@ GameObject:
   - component: {fileID: 1802000395}
   - component: {fileID: 1802000394}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Sofia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
