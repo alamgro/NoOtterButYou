@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public GameObject barraVidaObj;
     public GameObject burbujasParticulas;
 
+    //Audios
+    public AudioClip[] sonidos;
+
     public GameObject piedraPref;
     public GameObject barraOxigenoObj;
     public Transform otroPlayer;
@@ -20,6 +23,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb; //RigidBody del OBJETO PADRE (IMPORTANTE)
     private BarraOxigeno barraOxigenoComp;
     private SpriteRenderer spritePlayer;
+    private AudioSource controladorAudio;
 
     private float timerDisparo;
     private float timerRecuperacion;
@@ -32,6 +36,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         barraOxigenoComp = barraOxigenoObj.GetComponent<BarraOxigeno>();
         spritePlayer = GetComponent<SpriteRenderer>();
+        controladorAudio = GetComponent<AudioSource>();
         incapacitado = inmunidad = false; //Por defecto estos estados inician desactivados
         timerDisparo = frecuenciaDisparo;
     }
@@ -112,6 +117,7 @@ public class Player : MonoBehaviour
             if (timerDisparo >= frecuenciaDisparo)
             {
                 Instantiate(piedraPref, transform.position, Quaternion.identity);
+                controladorAudio.PlayOneShot(sonidos[0]);
                 timerDisparo = 0f; //Reiniciar el contador
             }
         }

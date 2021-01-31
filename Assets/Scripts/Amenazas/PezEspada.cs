@@ -11,14 +11,18 @@ public class PezEspada : MonoBehaviour
 	public float velocidadMov;
 	public float velocidadDeSprint;
 	public int vida;
+	//Audios
+	public AudioClip sonido;
 
 	private Rigidbody2D rb; //Rigidbody2D del obstáculo
+    private AudioSource controladorAudio;
 	private float velocidadActual;
 	private bool debeDetenerse;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+        controladorAudio = GetComponent<AudioSource>();
 		velocidadActual = velocidadMov;
 		debeDetenerse = true;
 	}
@@ -38,7 +42,7 @@ public class PezEspada : MonoBehaviour
 			StartCoroutine(EsperarSprint(1.5f));
 		}
 
-		if (transform.position.x <= -20f)
+		if (transform.position.x <= -100f)
 		{
 			Destroy(gameObject);
 		}
@@ -66,6 +70,7 @@ public class PezEspada : MonoBehaviour
 	{
 		velocidadActual = 0f;
 		yield return new WaitForSeconds(_tiempo);
+		controladorAudio.PlayOneShot(sonido);
 		velocidadActual = velocidadMov * velocidadDeSprint;
 	}
 }

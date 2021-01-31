@@ -11,11 +11,17 @@ public class BarraOxigeno : MonoBehaviour
     [HideInInspector]
     public bool quitarVida;
 
+    //Audios
+    public AudioClip sonido;
     public Image barraOxigeno;
+
+    private AudioSource controladorAudio;
+
 
     void Start()
     {
         barraOxigeno = GetComponent<Image>();
+        controladorAudio = GetComponent<AudioSource>();
         quitarVida = false;
     }
 
@@ -29,6 +35,7 @@ public class BarraOxigeno : MonoBehaviour
         //Si el oxígeno llega a 0, pierdes una vida y se te reinicia el oxígeno a 100%
         if (quitarVida)
         {
+            controladorAudio.PlayOneShot(sonido);
             BarraVida.vidaActual -= 1f; //Resta una vida
             quitarVida = false; //Ponemos el oxígeno en una cantidad muy pequeña pero diferente de 0 para que no vuelva a entrar a este if
             //oxigenoActual = oxigenoMax; //Reset del oxígeno al máximo (POR AHORA NO DEBE HACERLO ÉL MISMO
