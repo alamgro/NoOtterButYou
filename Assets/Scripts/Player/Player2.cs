@@ -7,6 +7,7 @@ public class Player2 : MonoBehaviour
     #region VARIABLES PÚBLICAS
     public float velocidadMov;
     public float frecuenciaDisparo;
+    public GameObject barraVidaObj;
 
     public GameObject piedraPref;
     public GameObject barraOxigenoObj;
@@ -41,30 +42,42 @@ public class Player2 : MonoBehaviour
             Disparo();
             ChecarOxigeno();
         }
-        else
+        else //Si aún les quedan vidas, entonces puede ser recuperado por el otro Player
         {
             rb.velocity = Vector2.zero; //Hace que se detenga al instante cuando está incapacitado
-            float distanciaPlayers = Vector3.Distance(transform.position, otroPlayer.position); //Calcula la distancia entre el los jugadores
+            float distanciaPlayers = Vector2.Distance(transform.position, otroPlayer.position); //Calcula la distancia entre el los jugadores
 
-            //Revisa que la distancia entre los players sea la suficiente para recuperarlo de la incapacidad
-            if (distanciaPlayers <= 1.1f)
+            if (BarraVida.vidaActual >= 0) //Checa que todavía tenga vidas
             {
-                timerRecuperacion += Time.deltaTime;
-                barraOxigenoComp.oxigenoActual = ((barraOxigenoComp.oxigenoMax / 2.0f) * timerRecuperacion); //Rellenarle el oxígeno al 100%
-
-                //Cuando está en rango de revivir por dos segundos, lo revive
-                if (timerRecuperacion >= 2f)
+                //Revisa que la distancia entre los players sea la suficiente para recuperarlo de la incapacidad
+                if (distanciaPlayers <= 1.2f)
                 {
-                    print("Recuperado");
-                    incapacitado = false; //Quitamos la incapacidad
-                    barraOxigenoComp.oxigenoActual = barraOxigenoComp.oxigenoMax; //Rellenarle el oxígeno al 100%
+                    timerRecuperacion += Time.deltaTime;
+
+                    barraOxigenoComp.oxigenoActual = ((barraOxigenoComp.oxigenoMax / 2.0f) * timerRecuperacion); //Rellenarle el oxígeno al 100%
+
+                    //Cuando está en rango de revivir por dos segundos, lo revive
+                    if (timerRecuperacion >= 2f)
+                    {
+                        GameManager.jugadoresIncapacitados--; //Ya no se toma en cuenta como jugador incapacitado
+                        incapacitado = false; //Quitamos la incapacidad
+                        barraOxigenoComp.oxigenoActual = barraOxigenoComp.oxigenoMax; //Rellenarle el oxígeno al 100%
+                    }
+                }
+                else
+                {
+                    //Se resetea el tiempo cuando se alejan de la distancia de recuperación
+                    barraOxigenoComp.oxigenoActual = 0f;
+                    timerRecuperacion = 0f;
                 }
             }
-            else
+            else //Si no tiene vidas, desaparece tu personaje
             {
-                timerRecuperacion = 0f;
+                GameManager.jugadoresVivos--;
+                Destroy(gameObject);
             }
         }
+        print(incapacitado);
     }
 
     //Si se le acaba el oxígeno, queda incapacitado el Player
@@ -72,7 +85,9 @@ public class Player2 : MonoBehaviour
     {
         if (barraOxigenoComp.oxigenoActual <= 0)
         {
-            incapacitado = true;
+            incapacitado = true; //Incapacitar al jugador
+            barraOxigenoComp.quitarVida = true;
+            GameManager.jugadoresIncapacitados++; //Se cuenta como un jugador incapacitado
         }
     }
 
@@ -103,6 +118,7 @@ public class Player2 : MonoBehaviour
         #endregion
     }
 
+
     IEnumerator InvocarParpadeo(float _tiempo)
     {
         InvokeRepeating("ParpadeoInmune", 0f, 0.05f);
@@ -114,7 +130,6 @@ public class Player2 : MonoBehaviour
 
     void ParpadeoInmune()
     {
-        print(spritePlayer.enabled);
         spritePlayer.enabled = !spritePlayer.enabled;
     }
 
@@ -129,7 +144,7 @@ public class Player2 : MonoBehaviour
                 if (!inmunidad)
                 {
                     //Se le resta de oxígeno al jugador cuando toca una amenaza
-                    barraOxigenoComp.oxigenoActual -= 10;
+                    barraOxigenoComp.oxigenoActual -= 10f;
                     inmunidad = true; //Dar inmunidad
                     StartCoroutine(InvocarParpadeo(1f));
                 }
@@ -138,8 +153,9 @@ public class Player2 : MonoBehaviour
             if (collision.CompareTag("Oxigeno"))
             {
                 //Se le resta de oxígeno al jugador cuando toca una amenaza
-                barraOxigenoComp.oxigenoActual += 10;
+                barraOxigenoComp.oxigenoActual += 10f;
             }
         }
     }
+
 }

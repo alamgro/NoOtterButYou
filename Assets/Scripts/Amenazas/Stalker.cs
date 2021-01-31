@@ -11,15 +11,13 @@ public class Stalker : MonoBehaviour
     private Rigidbody2D rb; //Rigidbody2D del obstáculo
     private GameObject[] players;
     private int randPlayer; //Con esto decidirá a cuál player seguir desde el inicio
-    private float velocidadActual;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         players = GameObject.FindGameObjectsWithTag("Player"); //Encontrar a todos los player
-        velocidadActual = velocidadMov; //Inicializar velocidad
         randPlayer = Random.Range(0, players.Length); //Elegir el player a seguir
-        InvokeRepeating("DispararProyectil", 1.5f, 1f);
+        InvokeRepeating("DispararProyectil", 1f, 1f);
     }
 
     void FixedUpdate()
@@ -36,7 +34,7 @@ public class Stalker : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.left * velocidadActual; //Le da la velocidad de movimiento al obstáculo
+            rb.velocity = Vector2.left * velocidadMov; //Le da la velocidad de movimiento al obstáculo
         }
     }
 

@@ -6,19 +6,22 @@ using UnityEngine.UI;
 public class BarraVida : MonoBehaviour
 {
     public float vidaMax; //Tamano total de barra 
-    public float vidaActual; //Vida que tiene en ese momento
+    public static float vidaActual; //Vida que tiene en ese momento
 
     Image barraVida;
 
     void Start()
     {
         barraVida = GetComponent<Image>();
+        vidaActual = vidaMax;
     }
 
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Alpha9)) //testeo in-game
-            vidaActual -= 1f; */
+        if (Input.GetKeyDown(KeyCode.Alpha9)) //testeo in-game
+            vidaActual -= 1f;
+
+        //print(vidaActual);
 
         if(vidaActual < 0)
         {

@@ -8,15 +8,15 @@ public class BarraOxigeno : MonoBehaviour
 {
     public float oxigenoMax; //Tamano total de barra 
     public float oxigenoActual; //El oxigendo o vida que tiene en ese momento y lo lleva el Player
-    public GameObject barraVidaObj;
+    [HideInInspector]
+    public bool quitarVida;
 
     public Image barraOxigeno;
-    private BarraVida barraVidaComp;
 
     void Start()
     {
         barraOxigeno = GetComponent<Image>();
-        barraVidaComp = barraVidaObj.GetComponent<BarraVida>();
+        quitarVida = false;
     }
 
     void Update()
@@ -27,10 +27,10 @@ public class BarraOxigeno : MonoBehaviour
         barraOxigeno.fillAmount = oxigenoActual / oxigenoMax;
 
         //Si el oxígeno llega a 0, pierdes una vida y se te reinicia el oxígeno a 100%
-        if (oxigenoActual <= 0f)
+        if (quitarVida)
         {
-            barraVidaComp.vidaActual -= 1f; //Resta una vida
-            oxigenoActual = 0.001f; //Ponemos el oxígeno en una cantidad muy pequeña pero diferente de 0 para que no vuelva a entrar a este if
+            BarraVida.vidaActual -= 1f; //Resta una vida
+            quitarVida = false; //Ponemos el oxígeno en una cantidad muy pequeña pero diferente de 0 para que no vuelva a entrar a este if
             //oxigenoActual = oxigenoMax; //Reset del oxígeno al máximo (POR AHORA NO DEBE HACERLO ÉL MISMO
         }
     }

@@ -7,10 +7,12 @@ public class StalkerProyectil : MonoBehaviour
     public float velocidadMov;
 
     private Rigidbody2D rb;
+    private int vida;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        vida = 1;
     }
 
     private void FixedUpdate()
@@ -21,9 +23,19 @@ public class StalkerProyectil : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ChecarVida();
+
         //Se destruye la piedra si se sale de la pantalla
         if (transform.position.x <= -15f)
             Destroy(gameObject);
+    }
+
+    void ChecarVida()
+    {
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,6 +44,11 @@ public class StalkerProyectil : MonoBehaviour
         {
             Destroy(gameObject);
             //Lógica para cuando tocan al enemigo
+        }
+        //Si le pega una piedra, pierde uno de vida
+        if (collision.CompareTag("Piedra"))
+        {
+            vida--;
         }
     }
 }
