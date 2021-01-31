@@ -17,7 +17,7 @@ public class Stalker : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         players = GameObject.FindGameObjectsWithTag("Player"); //Encontrar a todos los player
         randPlayer = Random.Range(0, players.Length); //Elegir el player a seguir
-        InvokeRepeating("DispararProyectil", 1f, 1f);
+        InvokeRepeating("DispararProyectil", 4f, 1f);
     }
 
     void FixedUpdate()

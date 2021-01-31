@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float velocidadMov;
     public float frecuenciaDisparo;
     public GameObject barraVidaObj;
+    public GameObject burbujasParticulas;
 
     public GameObject piedraPref;
     public GameObject barraOxigenoObj;
@@ -141,8 +142,9 @@ public class Player : MonoBehaviour
             {
                 if (!inmunidad)
                 {
+                    Instantiate(burbujasParticulas, transform.position, Quaternion.identity);
                     //Se le resta de oxígeno al jugador cuando toca una amenaza
-                    barraOxigenoComp.oxigenoActual -= 25f;
+                    barraOxigenoComp.oxigenoActual -= 20f;
                     inmunidad = true; //Dar inmunidad
                     StartCoroutine(InvocarParpadeo(1f));
                 }
