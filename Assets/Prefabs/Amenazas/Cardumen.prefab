@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3937798047965192773}
   - component: {fileID: 5165761069187567914}
   m_Layer: 0
-  m_Name: Cardumen 1
+  m_Name: Cardumen
   m_TagString: Amenaza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMov: 1
-  velocidadSprint: 25
+  velocidadSprint: 20
 --- !u!50 &5165761069187567914
 Rigidbody2D:
   serializedVersion: 4

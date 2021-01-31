@@ -29,7 +29,13 @@ public class GenerarObstaculos : MonoBehaviour
 
             if(probabilidad <= 45) //MEDIANO 45%
             {
-                Instantiate(obstaculos[0], posicion, Quaternion.identity);
+                probabilidad = Random.Range(1, 100);
+                if(probabilidad <= 33)
+                    Instantiate(obstaculos[0], posicion, Quaternion.identity); //Basura 1
+                else if (probabilidad <= 66)
+                    Instantiate(obstaculos[5], posicion, Quaternion.identity); //Basura 2
+                else
+                    Instantiate(obstaculos[6], posicion, Quaternion.identity); //Basura 3
             }
             else if (probabilidad <= 60) //CARDUMEN 15%
             {
