@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CuentaDistancia : MonoBehaviour
 {
-    public float oxigenoMax; //Tamano total de barra 
+    public float distanciaTotal; //Tamano total de barra 
 
     float tiempo;
     Image barraOxigeno;
@@ -25,7 +25,7 @@ public class CuentaDistancia : MonoBehaviour
     {
         tiempo += Time.deltaTime;
         print("El tiempo" + tiempo);
-        barraOxigeno.fillAmount = tiempo / oxigenoMax;
+        barraOxigeno.fillAmount = tiempo / distanciaTotal;
 
     }
     
