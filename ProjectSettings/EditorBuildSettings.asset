@@ -15,18 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScene.unity
     guid: 8992b94a5484ba24aa559796c0395131
   - enabled: 1
-    path: Assets/Scenes/Alex/Credits.unity
+    path: Assets/Scenes/ExcenasSecundarias/Credits.unity
     guid: 52a7571c47d3b264e98abf57e8e1868a
   - enabled: 1
-    path: Assets/Scenes/Alex/Mapping.unity
+    path: Assets/Scenes/ExcenasSecundarias/Mapping.unity
     guid: da18b035adba5ba4a8c6a0823d408862
   - enabled: 1
-    path: Assets/Scenes/Alex/Menu.unity
+    path: Assets/Scenes/ExcenasSecundarias/Menu.unity
     guid: fa0a866c8bd3c1740b43e1f267997d8b
   - enabled: 1
-    path: Assets/Scenes/Alex/MappingAdditive.unity
+    path: Assets/Scenes/ExcenasSecundarias/MappingAdditive.unity
     guid: ad9a1ab2aba1a484eb25d37e3648f803
   - enabled: 1
-    path: Assets/Scenes/Alex/Pause.unity
+    path: Assets/Scenes/ExcenasSecundarias/Pause.unity
     guid: 069fe497c094260489b818999987159c
+  - enabled: 1
+    path: Assets/Scenes/ExcenasSecundarias/GameOver.unity
+    guid: eb70d22dd5c3c6445982615ad800c11a
   m_configObjects: {}

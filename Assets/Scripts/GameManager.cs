@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static int jugadoresVivos; //Es la cantidad de jugadores que aún están vivos, si no queda ninguno, se acaba el juego
 
     bool pause;
+    bool escenaFin;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
         jugadoresVivos = 2;
         jugadoresIncapacitados = 0;
         pause = false;
-    
+        escenaFin = false;
     }
 
     // Update is called once per frame
@@ -39,8 +40,14 @@ public class GameManager : MonoBehaviour
         //Si los dos jugadores están incapacitados se acaba el juego, o también si no quedan más jugadores vivos.
         if(jugadoresIncapacitados == 2 || jugadoresVivos == 0)
         {
+            
             //GameOver
-            SceneManager.LoadScene("MainScene");
+            if(!escenaFin)
+            {
+                Escenas.GameOver();
+                escenaFin = true;
+            }
+
         }
 
         // print("Pause esta en :" + pause);
