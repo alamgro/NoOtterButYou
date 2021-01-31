@@ -14,6 +14,5 @@ public class HiperVinculo : MonoBehaviour
 	{
 
 		Application.OpenURL(links);
-
 	}
 }
