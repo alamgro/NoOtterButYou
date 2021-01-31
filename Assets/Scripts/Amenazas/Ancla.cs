@@ -34,7 +34,6 @@ public class Ancla : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
-
 	}
 
 	IEnumerator EsperarCaida(float _tiempo)

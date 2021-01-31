@@ -40,11 +40,6 @@ public class StalkerProyectil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-            //Lógica para cuando tocan al enemigo
-        }
         //Si le pega una piedra, pierde uno de vida
         if (collision.CompareTag("Piedra"))
         {
