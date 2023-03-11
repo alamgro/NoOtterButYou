@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     public static bool mappingAbierto;
     public static bool gameOver;
+
+    [SerializeField] private UnityEvent _OnPaused;
+    [SerializeField] private UnityEvent _OnResume;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +41,12 @@ public class GameManager : MonoBehaviour
             if (!pause)
             {
                 Escenas.Pause();
+                _OnPaused?.Invoke();
                 mappingAbierto = false;
             }
             else
             {
+                _OnResume?.Invoke();
                 Escenas.PauseDestroy();
             }
             if (mappingAbierto)

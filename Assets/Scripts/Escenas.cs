@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class Escenas : MonoBehaviour
 {
+    private readonly string _blackScreenAssetName = "BlackScreenUI";
+
     public void MenuScene()
     {
         SceneManager.LoadScene("Menu");
@@ -55,8 +56,16 @@ public class Escenas : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync("GameOver");
     }
-    public void Salir()
+    public void Salir(float _delaySeconds)
     {
+        StartCoroutine(ExitRoutine(_delaySeconds));
+    }
+
+    private IEnumerator ExitRoutine(float _delaySeconds)
+    {
+        Transform canvasTransform = GameObject.FindObjectOfType<Canvas>().transform;
+        Instantiate(Resources.Load(_blackScreenAssetName), canvasTransform);
+        yield return new WaitForSeconds(_delaySeconds);
         Application.Quit();
     }
 
